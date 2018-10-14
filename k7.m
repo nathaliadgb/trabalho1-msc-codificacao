@@ -18,7 +18,7 @@ function Perro = k7(p_param,L_param)
 		r = mod((v+e),2);
 		
 		% error detection	
-		err_flag = sum(mod((r-v),2));
+		err_flag = sum(mod((r-u),2));
 		err = err + err_flag;
 		
 		L = L-1;

@@ -19,6 +19,7 @@ function Perro = k1(p_param,L_param)
 		
 		% error detection
 		err_flag = round(abs(sum(r-v)/8));
+		
 		err = err + err_flag;
 		
 		L = L-1;

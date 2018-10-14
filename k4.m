@@ -66,7 +66,7 @@ function Perro = k4(p_param,L_param)
 		[M,I]=min(dist_hamm);
 		% expected value of u
 		exp_u = u_hamm(I,:);
-		if exp_u != u
+		if sum(exp_u-u)>0
 			err = err + 4;
 		end
 		
