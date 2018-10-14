@@ -13,6 +13,3 @@ for p = [0.05 0.1 0.2 0.3];
 	Perro_k7 = p
 	k7(p,L)
 end
-
-x = -10:0.1:10;
-plot (x, sin (x));
