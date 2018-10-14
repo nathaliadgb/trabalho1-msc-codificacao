@@ -1,21 +1,29 @@
-k = 7;
-L0 = 10000;
-L = L0;
-p = 0.05 % 0.1 0.2 0.3
-err = 0;
+function Perro = k7(p_param,L_param)
 
-while L > 0
+	k = 7;
+	L = L_param;
+	p = p_param;
+	err = 0;
 
-	u = abs(round(rand(1, 7)));
-	v = u;
-	e=abs(round(rand(1, 7)-0.5+p));
-	r = mod((v+e),2);
+	while L > 0
 	
-	err_flag = sum(mod((r-v),2));
-	
-	err = err + err_flag;
-	
-	L = L-1;
+		% fonte discreta
+		u = abs(round(rand(1, 7)));
+		
+		% codificador de fonte
+		v = u;
+		
+		% BSC channel
+		e=abs(round(rand(1, 7)-0.5+p));
+		r = mod((v+e),2);
+		
+		% error detection	
+		err_flag = sum(mod((r-v),2));
+		err = err + err_flag;
+		
+		L = L-1;
+	end
+
+	Perro = err/(k*L_param);
+
 end
-
-err/(k*L0)
