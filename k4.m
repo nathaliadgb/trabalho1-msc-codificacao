@@ -66,7 +66,10 @@ function Perro = k4(p_param,L_param)
 		[M,I]=min(dist_hamm);
 		% expected value of u
 		exp_u = u_hamm(I,:);
-		if sum(mod((exp_u-u),2))>0
+		
+		% check if there are differences between exp_u and u
+		err_flag = sum(mod((exp_u-u),2));
+		if err_flag > 0
 			err = err + 4;
 		end
 		
