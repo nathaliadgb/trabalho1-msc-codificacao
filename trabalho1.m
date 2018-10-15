@@ -6,7 +6,8 @@ clear all;
 clc;
 
 L = 10000;
-p_vector = [0.05 0.1 0.2 0.3];
+% p_vector = [0.05 0.1 0.2 0.3];
+p_vector = 0.05:0.05:0.3;
 
 data_plot = zeros(6,length(p_vector));
 
