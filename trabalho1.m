@@ -34,6 +34,8 @@ figure(1);
 	ylabel('Error rate (%)')
 	set(h_plot,'LineWidth',2)
 	grid on;
+	% autosaving
+	saveas(gcf,'R1-7.png')
 
 figure(2);
 	h_plot = plot(p_vector,data_plot(3,:),p_vector,data_plot(4,:),'--');
@@ -45,7 +47,8 @@ figure(2);
 	ylabel('Error rate (%)')
 	set(h_plot,'LineWidth',2)
 	grid on;
-
+	% autosaving
+	saveas(gcf,'R4-7.png')
 
 figure(3);
 	h_plot = plot(p_vector,data_plot(5,:),p_vector,data_plot(6,:),'--');
@@ -57,3 +60,5 @@ figure(3);
 	ylabel('Error rate (%)')
 	set(h_plot,'LineWidth',2)
 	grid on;
+	% autosaving
+	saveas(gcf,'R7-7.png')

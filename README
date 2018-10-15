@@ -1,0 +1,8 @@
+# PT-BR
+Simulação de diferentes codificações com diferentes níveis de redundância.
+Comparação entre simulação e valor teórico para faixa de erro.
+
+Para rodar, basta executar trabalho1.m
+Serão gerados 3 plots comparando teoria e simulação, os quais serão salvos automaticamente na extensão .png
+
+Desenvolvido usando o Octave 4.2.1
