@@ -5,7 +5,7 @@ close all;
 clear all;
 clc;
 
-L = 1000;
+L = 10000;
 p_vector = [0.05 0.1 0.2 0.3];
 
 data_plot = zeros(6,length(p_vector));
@@ -20,34 +20,39 @@ for i = 1:length(p_vector)
 	data_plot(6,i) = k7(p,L);
 end
 
+% multiplicando por 100 para ter o valor em %
 data_plot=100*data_plot;
 
 figure(1);
-	plot(p_vector,data_plot(1,:),p_vector,data_plot(2,:));
-	h = legend ("Theoretical", "Simulated");
-	legend (h);
-	set (h, "fontsize", 12);
-	title('R=1/7');
+	h_plot = plot(p_vector,data_plot(1,:),p_vector,data_plot(2,:),'--');
+	h_legend = legend ("Simulated", "Theoretical");
+	legend (h_legend);
+	set (h_legend, "fontsize", 12);
+	title(['R=1/7, L=' num2str(L)]);
 	xlabel('p')
 	ylabel('Error rate (%)')
+	set(h_plot,'LineWidth',2)
 	grid on;
 
 figure(2);
-	plot(p_vector,data_plot(3,:),p_vector,data_plot(4,:));
-	h = legend ("Theoretical", "Simulated");
-	legend (h);
-	set (h, "fontsize", 12);
-	title('R=4/7');
+	h_plot = plot(p_vector,data_plot(3,:),p_vector,data_plot(4,:),'--');
+	h_legend = legend ("Simulated", "Theoretical");
+	legend (h_legend);
+	set (h_legend, "fontsize", 12);
+	title(['R=4/7, L=' num2str(L)]);
 	xlabel('p')
 	ylabel('Error rate (%)')
+	set(h_plot,'LineWidth',2)
 	grid on;
 
+
 figure(3);
-	plot(p_vector,data_plot(5,:),p_vector,data_plot(6,:));
-	h = legend ("Theoretical", "Simulated");
-	legend (h);
-	set (h, "fontsize", 12);
-	title('R=7/7');
+	h_plot = plot(p_vector,data_plot(5,:),p_vector,data_plot(6,:),'--');
+	h_legend = legend ("Simulated", "Theoretical");
+	legend (h_legend);
+	set (h_legend, "fontsize", 12);
+	title(['R=7/7, L=' num2str(L)]);
 	xlabel('p')
 	ylabel('Error rate (%)')
+	set(h_plot,'LineWidth',2)
 	grid on;
