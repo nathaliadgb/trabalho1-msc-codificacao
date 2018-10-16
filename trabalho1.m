@@ -7,7 +7,7 @@ clc;
 
 L = 10000;
 % p_vector = [0.05 0.1 0.2 0.3];
-p_vector = 0.05:0.05:0.3;
+p_vector = 0.0:0.05:0.5;
 
 data_plot = zeros(6,length(p_vector));
 
@@ -27,7 +27,7 @@ data_plot=100*data_plot;
 figure(1);
 	h_plot = plot(p_vector,data_plot(1,:),p_vector,data_plot(2,:),'--');
 	h_legend = legend ("Simulated", "Theoretical");
-	legend (h_legend);
+	legend (h_legend,'Location','northwest');
 	set (h_legend, "fontsize", 12);
 	title(['R=1/7, L=' num2str(L)]);
 	xlabel('p')
@@ -40,7 +40,7 @@ figure(1);
 figure(2);
 	h_plot = plot(p_vector,data_plot(3,:),p_vector,data_plot(4,:),'--');
 	h_legend = legend ("Simulated", "Theoretical");
-	legend (h_legend);
+	legend (h_legend,'Location','northwest');
 	set (h_legend, "fontsize", 12);
 	title(['R=4/7, L=' num2str(L)]);
 	xlabel('p')
@@ -53,7 +53,7 @@ figure(2);
 figure(3);
 	h_plot = plot(p_vector,data_plot(5,:),p_vector,data_plot(6,:),'--');
 	h_legend = legend ("Simulated", "Theoretical");
-	legend (h_legend);
+	legend (h_legend,'Location','northwest');
 	set (h_legend, "fontsize", 12);
 	title(['R=7/7, L=' num2str(L)]);
 	xlabel('p')
@@ -62,3 +62,16 @@ figure(3);
 	grid on;
 	% autosaving
 	saveas(gcf,'R7-7.png')
+	
+figure(4);
+	h_plot = plot(p_vector,data_plot(1,:),p_vector,data_plot(2,:),'--', p_vector,data_plot(3,:),p_vector,data_plot(4,:),'--',p_vector,data_plot(5,:),p_vector,data_plot(6,:),'--');
+	h_legend = legend ("Simulated - R=1/7", "Theoretical- R=1/7","Simulated - R=4/7", "Theoretical- R=4/7","Simulated - R=7/7", "Theoretical- R=7/7");
+	legend (h_legend,'Location','northwest');
+	set (h_legend, "fontsize", 12);
+	title(['Comparison between, R=1/7, R=4/7 and R=7/7 - L=' num2str(L)]);
+	xlabel('p')
+	ylabel('Error rate (%)')
+	set(h_plot,'LineWidth',2)
+	grid on;
+	% autosaving
+	saveas(gcf,'comparison-Rs.png')
