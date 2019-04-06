@@ -1,6 +1,16 @@
+# EN
+Simulation of codifications schemes with different levels of redundancy
+Comparison between simulation and theoretical value for a given error rate
+
+Execute trabalho1.m to run this script
+3 plots comparing theory and simulation will be generated, which will be automatically saved in the .png extension
+
+Developed using Octave 4.2.1
+
+
 # PT-BR
 Simulação de diferentes codificações com diferentes níveis de redundância.
-Comparação entre simulação e valor teórico para faixa de erro.
+Comparação entre simulação e valor teórico para taxa de erro.
 
 Para rodar, basta executar trabalho1.m
 Serão gerados 3 plots comparando teoria e simulação, os quais serão salvos automaticamente na extensão .png
